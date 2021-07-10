@@ -1,11 +1,16 @@
 /* eslint-disable react/jsx-no-target-blank */
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
+import ReactPageScroller from 'react-page-scroller';
 
 import IndexNavbar from "components/Navbars/IndexNavbar.js";
 import Footer from "components/Footers/Footer.js";
 
 export default function Index() {
+  const [ number, setNumber ] = useState({currentPage:null});
+  const handlePageChange = number => {
+    setNumber({ currentPage: number });
+  };
   return (
     <>
       <IndexNavbar fixed />
