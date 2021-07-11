@@ -5,7 +5,7 @@ import ReactPageScroller from 'react-page-scroller';
 import IndexNavbar from "components/Navbars/IndexNavbar.js";
 import Footer from "components/Footers/Footer.js";
 
-const OnePage = () => {
+const FirstComponent = () => {
     return (
     <div className="relative pt-16 pb-32 flex content-center items-center justify-center min-h-screen-75 h-screen">
         <div
@@ -37,6 +37,32 @@ const OnePage = () => {
           </div>
         </div>
     </div>
+  )
+}
+const SecondComponent = () => {
+    return (
+        <div className="relative w-full pt-16 pb-32 flex content-center items-center justify-center min-h-screen-75 h-screen bg-purple-500">
+
+        </div>
+    )
+}
+const ThirdComponent = () => {
+    return (
+        <div className="relative w-full pt-16 pb-32 flex content-center items-center justify-center min-h-screen-75 h-screen bg-blue-500">
+
+        </div>
+    )
+}
+const LastComponent = ({ height }) => {
+    return (
+        <div className="relative h-screen">
+            <div style={{ height }} className="relative w-full flex content-center items-center justify-center bg-black">
+            
+            </div>
+            <div className="absolute bottom-0 w-full">
+                <Footer/>
+            </div>
+        </div>
     )
 }
 
@@ -44,12 +70,12 @@ export default function Scroll(){
     return(
         <>
         <IndexNavbar />
-            <ReactPageScroller>
-                <OnePage/>
-                <OnePage/>
-                <OnePage/>
+            <ReactPageScroller containerHeight={"100vh"}>
+                <FirstComponent/>
+                <SecondComponent/>
+                <ThirdComponent/>
+                <LastComponent/>
             </ReactPageScroller>
-        <Footer/>
         </>
     )
 }
